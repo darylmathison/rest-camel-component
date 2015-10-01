@@ -19,7 +19,7 @@ public class RestComponentTest extends CamelTestSupport {
     protected RouteBuilder createRouteBuilder() throws Exception {
         return new RouteBuilder() {
             public void configure() {
-                from("drmrest://foo")
+                from("file:src/data?noop=true")
                   .to("drmrest://bar")
                   .to("mock:result");
             }
